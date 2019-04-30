@@ -1,0 +1,16 @@
+{
+  "name": "bbd",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "gh-pages -d UI"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://github.com/todak2000/bbd",
+  "dependencies": {
+    "gh-pages": "^2.0.1"
+  }
+}
