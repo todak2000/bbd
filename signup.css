@@ -1,9 +1,12 @@
 
 
 body {
-    background: #fff;
+  background-color: #fff;
+  background-image: url('img/bg-2.jpg');
+  background-size: cover;
     color: #46485c;
     font-family: 'Montserrat', sans-serif;
+    margin:0;
   }
   
   h2 {
@@ -13,7 +16,14 @@ body {
     text-align: center;
     margin-bottom: 10px;
   }
-  
+  footer{
+    bottom: 0;
+    padding-top:10px;
+    position: fixed;
+    background-color: #fff;
+    width: 100%;
+    text-align: center;
+  }
   a {
     color: #46485c;
     text-decoration: none;
@@ -25,7 +35,7 @@ body {
     top: 50%;
     left: 50%;
     margin: -184px 0px 0px -155px;
-    background: rgba(0,0,0,0.39);
+    background: rgba(251, 247, 247, 0.71);
     padding: 20px 30px;
     border-radius: 5px;
     box-shadow: 0px 1px 0px rgba(0,0,0,0.3),inset 0px 1px 0px rgba(255,255,255,0.07)

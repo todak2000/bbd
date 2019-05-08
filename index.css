@@ -29,6 +29,7 @@ header nav {
 
 header nav .nav-common {
 	display: inline-block;
+	padding-top:15px;
 }
 
 header nav .logo {
@@ -68,7 +69,92 @@ header nav .nav-icon {
 	font-size: 16px;
 }
 
+/* new navbar */
+.navbar {
+	width: 100%;
+background-color: #fff;
+overflow: auto;
+display: flex;
+justify-content: space-evenly;
+  }
+  
+  .navbar a {
+	float: left;
+	padding: 12px;
+	color: #096386;
+	text-decoration: none;
+	font-size: 17px;
+  }
+  .words{
+	  padding-top:35px !important;
+	  font-family: Montserrat;
+  }
+  .navbar a:hover {
+	background-color: #f9f9f6;
+  }
+  
+  .active {
+	/* background-color: #086f97; */
+  }
+  
+  .topnav {
+	display: none;
+  }
+
 @media only screen and (max-width: 768px) {
+	.navbar {
+		display: none;
+	  }
+	  /* mobile nav */
+
+	  .mobile-container {
+		max-width: 480px;
+		margin: auto;
+		background-color: #555;
+		height: 500px;
+		color: white;
+		border-radius: 10px;
+	  }
+	  
+	  .topnav {
+		  display: block;
+		overflow: hidden;
+		background-color: #fff;
+		position: relative;
+		/* margin-bottom:-20px; */
+	  }
+	  .words{
+		padding-top:15px !important;
+		font-family: Montserrat;
+	}
+	  .topnav #myLinks {
+		display: none;
+		background:#013c53;
+		margin-top:-20px;
+	  }
+	  
+	  .topnav a {
+		color: white;
+		padding: 14px 16px;
+		text-decoration: none;
+		font-size: 17px;
+		display: block;
+	  }
+	  .topnav a:hover {
+		color: #000;
+		background:#ccc;
+	  }
+	  
+	  .topnav a.icon {
+		background: #013c53;
+		display: block;
+		position: absolute;
+		right: 20px;
+		top: 20px;
+	  }
+	  
+	 
+	  /* mobile anv end */
 	header nav {
 		height: 5rem;
 		line-height: 5rem;
