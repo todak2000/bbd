@@ -29,6 +29,7 @@ header nav {
 
 header nav .nav-common {
 	display: inline-block;
+	padding-top:15px;
 }
 
 header nav .logo {
