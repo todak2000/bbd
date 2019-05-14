@@ -249,6 +249,13 @@ justify-content: space-evenly;
 	width: 10rem;
 	padding: 0.8rem;
 }
+.botton{
+	margin: 0 auto;
+	background-color: #a61458;
+	border-color: #a61458;
+	width: 10rem;
+	padding: 0.8rem;
+}
 
 #header-hero .header-content .button p {
 	font-family: Cambria;
@@ -318,7 +325,7 @@ justify-content: space-evenly;
 #summer-collection {
 	width: 100%;
 	display: block;
-	margin: 6rem 0rem;
+	/* margin: 6rem 0rem; */
 }
 
 #summer-collection .container {
@@ -1041,6 +1048,7 @@ footer {
 	font-size: 0;
 	padding: 1.6rem 0rem;
 	width: 100%;
+	text-align: center;
 }
 
 footer p {
@@ -1055,7 +1063,7 @@ footer p {
 
 footer .copy-right {
 	width: 80%;
-	text-align: left;
+	text-align: center;
 	padding-left: 4rem;
 }
 
