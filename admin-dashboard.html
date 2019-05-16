@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html>
+<title>Make-Up Store Admin Panel</title>
+<link rel=icon href=img/favi.svg>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="admin.css">
+<link rel="stylesheet" href="admin2.css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5 {font-family: "Montserrat", sans-serif}
+</style>
+<body class="td-light-grey">
+
+<!-- Top container -->
+<div class="td-bar td-top td-black td-large" style="z-index:4">
+  <button class="td-bar-item td-button td-hide-large td-hover-none td-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
+  
+  <span class="td-bar-item td-left"><img src="img/makeup.svg" height="50" alt="brand-logo"> Make-Up Admin Panel</span>
+</div>
+
+<!-- Sidebar/menu -->
+<nav class="td-sidebar td-collapse td-blackie td-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+  <div class="td-container cont">
+    <i class="fa fa-user-circle-o faw"></i>
+    <h5>Welcome Admin!</h5>
+  </div>
+  <div class="td-bar-block">
+    <a href="#" class="td-bar-item td-button td-padding-16 td-hide-large td-dark-grey td-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
+    <a href="admin-dashboard.html" class="td-bar-item td-button td-padding td-blue"><i class="fa fa-th-large fa-fw"></i>  Overview</a>
+    <a href="index.html" class="td-bar-item td-button td-padding"><i class="fa fa-home fa-fw"></i>  Home</a>
+    <a href="#" class="td-bar-item td-button td-padding"><i class="fa fa-eye fa-fw"></i>  Views</a>
+    <a href="#" class="td-bar-item td-button td-padding"><i class="fa fa-bar-chart fa-fw"></i>  Traffic</a>
+    <a href="#" class="td-bar-item td-button td-padding"  onclick="catlog_open()"><i class="fa fa-shopping-basket fa-fw"></i>  Catlog</a>
+    <a href="#" class="td-bar-item td-button td-padding"><i class="fa fa-shopping-cart fa-fw"></i>  Orders</a>
+    <a href="#" class="td-bar-item td-button td-padding"><i class="fa fa-users fa-fw"></i>  Clients/Users</a>
+    <a href="#" class="td-bar-item td-button td-padding"><i class="fa fa-money  fa-fw"></i>  Revenue</a>
+    <a href="#" class="td-bar-item td-button td-padding"><i class="fa fa-cog fa-fw"></i>  Settings</a><br><br>
+  </div>
+</nav>
+
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="td-overlay td-hide-large td-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="td-main" style="margin-left:300px;margin-top:43px;" id="overview">
+
+  <!-- Header -->
+  <header class="td-container" style="padding-top:22px">
+    <h5><b><i class="fa fa-dashboard"></i> My Dashboard</b></h5>
+  </header>
+
+  <div class="td-row-padding td-margin-bottom">
+    <div class="td-quarter">
+      <div class="td-container td-red td-padding-16">
+        <div class="td-left"><i class="fa fa-comment td-xxxlarge"></i></div>
+        <div class="td-right">
+          <h3>N52,045.67</h3>
+        </div>
+        <div class="td-clear"></div>
+        <h4>Revenue</h4>
+      </div>
+    </div>
+    <div class="td-quarter">
+      <div class="td-container td-blue td-padding-16">
+        <div class="td-left"><i class="fa fa-eye td-xxxlarge"></i></div>
+        <div class="td-right">
+          <h3>9906</h3>
+        </div>
+        <div class="td-clear"></div>
+        <h4>Views</h4>
+      </div>
+    </div>
+    <div class="td-quarter">
+      <div class="td-container td-teal td-padding-16">
+        <div class="td-left"><i class="fa fa-share-alt td-xxxlarge"></i></div>
+        <div class="td-right">
+          <h3>2312</h3>
+        </div>
+        <div class="td-clear"></div>
+        <h4>Orders</h4>
+      </div>
+    </div>
+    <div class="td-quarter">
+      <div class="td-container td-orange td-text-white td-padding-16">
+        <div class="td-left"><i class="fa fa-users td-xxxlarge"></i></div>
+        <div class="td-right">
+          <h3>712</h3>
+        </div>
+        <div class="td-clear"></div>
+        <h4>Users</h4>
+      </div>
+    </div>
+  </div>
+
+  <div class="td-panel">
+    <div class="td-row-padding" style="margin:0 -16px">
+      <div class="td-third">
+        <h5>Regions</h5>
+        <img src="/w3images/region.jpg" style="width:100%" alt="Google Regional Map">
+      </div>
+      <div class="td-twothird">
+        <h5>Feeds</h5>
+        <table class="td-table td-striped td-white">
+          <tr>
+            <td><i class="fa fa-user td-text-blue td-large"></i></td>
+            <td>New record, over 90 views.</td>
+            <td><i>10 mins</i></td>
+          </tr>
+          <tr>
+            <td><i class="fa fa-bell td-text-red td-large"></i></td>
+            <td>Database error.</td>
+            <td><i>15 mins</i></td>
+          </tr>
+          <tr>
+            <td><i class="fa fa-users td-text-yellow td-large"></i></td>
+            <td>New record, over 40 users.</td>
+            <td><i>17 mins</i></td>
+          </tr>
+          <tr>
+            <td><i class="fa fa-comment td-text-red td-large"></i></td>
+            <td>New comments.</td>
+            <td><i>25 mins</i></td>
+          </tr>
+          <tr>
+            <td><i class="fa fa-bookmark td-text-blue td-large"></i></td>
+            <td>Check transactions.</td>
+            <td><i>28 mins</i></td>
+          </tr>
+          <tr>
+            <td><i class="fa fa-laptop td-text-red td-large"></i></td>
+            <td>CPU overload.</td>
+            <td><i>35 mins</i></td>
+          </tr>
+          <tr>
+            <td><i class="fa fa-share-alt td-text-green td-large"></i></td>
+            <td>New shares.</td>
+            <td><i>39 mins</i></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <!-- <div class="td-container">
+    <h5>General Stats</h5>
+    <p>New Visitors</p>
+    <div class="td-grey">
+      <div class="td-container td-center td-padding td-green" style="width:25%">+25%</div>
+    </div>
+
+    <p>New Users</p>
+    <div class="td-grey">
+      <div class="td-container td-center td-padding td-orange" style="width:50%">50%</div>
+    </div>
+
+    <p>Bounce Rate</p>
+    <div class="td-grey">
+      <div class="td-container td-center td-padding td-red" style="width:75%">75%</div>
+    </div>
+  </div>
+  <hr> -->
+
+  <!-- <div class="td-container">
+    <h5>Countries</h5>
+    <table class="td-table td-striped td-bordered td-border td-hoverable td-white">
+      <tr>
+        <td>United States</td>
+        <td>65%</td>
+      </tr>
+      <tr>
+        <td>UK</td>
+        <td>15.7%</td>
+      </tr>
+      <tr>
+        <td>Russia</td>
+        <td>5.6%</td>
+      </tr>
+      <tr>
+        <td>Spain</td>
+        <td>2.1%</td>
+      </tr>
+      <tr>
+        <td>India</td>
+        <td>1.9%</td>
+      </tr>
+      <tr>
+        <td>France</td>
+        <td>1.5%</td>
+      </tr>
+    </table><br>
+    <button class="td-button td-dark-grey">More Countries  <i class="fa fa-arrow-right"></i></button>
+  </div>
+  <hr> -->
+  <!-- <div class="td-container">
+    <h5>Recent Users</h5>
+    <ul class="td-ul td-card-4 td-white">
+      <li class="td-padding-16">
+        <img src="/w3images/avatar2.png" class="td-left td-circle td-margin-right" style="width:35px">
+        <span class="td-xlarge">Mike</span><br>
+      </li>
+      <li class="td-padding-16">
+        <img src="/w3images/avatar5.png" class="td-left td-circle td-margin-right" style="width:35px">
+        <span class="td-xlarge">Jill</span><br>
+      </li>
+      <li class="td-padding-16">
+        <img src="/w3images/avatar6.png" class="td-left td-circle td-margin-right" style="width:35px">
+        <span class="td-xlarge">Jane</span><br>
+      </li>
+    </ul>
+  </div>
+  <hr> -->
+
+  <!-- <div class="td-container">
+    <h5>Recent Comments</h5>
+    <div class="td-row">
+      <div class="td-col m2 text-center">
+        <img class="td-circle" src="/w3images/avatar3.png" style="width:96px;height:96px">
+      </div>
+      <div class="td-col m10 td-container">
+        <h4>John <span class="td-opacity td-medium">Sep 29, 2014, 9:12 PM</span></h4>
+        <p>Keep up the GREAT work! I am cheering for you!! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><br>
+      </div>
+    </div>
+
+    <div class="td-row">
+      <div class="td-col m2 text-center">
+        <img class="td-circle" src="/w3images/avatar1.png" style="width:96px;height:96px">
+      </div>
+      <div class="td-col m10 td-container">
+        <h4>Bo <span class="td-opacity td-medium">Sep 28, 2014, 10:15 PM</span></h4>
+        <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><br>
+      </div>
+    </div>
+  </div>
+  <br> -->
+  <!-- <div class="td-container td-dark-grey td-padding-32">
+    <div class="td-row">
+      <div class="td-container td-third">
+        <h5 class="td-bottombar td-border-green">Demographic</h5>
+        <p>Language</p>
+        <p>Country</p>
+        <p>City</p>
+      </div>
+      <div class="td-container td-third">
+        <h5 class="td-bottombar td-border-red">System</h5>
+        <p>Browser</p>
+        <p>OS</p>
+        <p>More</p>
+      </div>
+      <div class="td-container td-third">
+        <h5 class="td-bottombar td-border-orange">Target</h5>
+        <p>Users</p>
+        <p>Active</p>
+        <p>Geo</p>
+        <p>Interests</p>
+      </div>
+    </div>
+  </div> -->
+
+  <!-- Footer -->
+  <footer class="td-container td-padding-16 td-light-grey foot">
+        <img src="img/mk1.png" height="50" alt="copy right image" />
+        <p class="copy-right"> MakeUp @2019. All right Reserved </p>
+  </footer>
+
+  <!-- End page content -->
+</div>
+
+<div id="catlog">
+  <div class="td-container tb">
+      <h5 class="td-center">Product Catlog</h5> 
+      <button class="addp" id="addBtn"><span class="td-right add">Add Product</span>
+      <span class="td-right"><i class="fa fa-plus-circle td-text-blue  fa-2x"></i></span></button>
+      <select class  ="form-control" name="state" id="maxRows">
+          <option value="5000">Show ALL Rows</option>
+          <option value="5">4</option>
+          <option value="10">10</option>
+         </select>
+    <table class="td-table td-striped td-white" id="table-id">
+      <tr>
+        <td class="td">Image</td>
+        <td class="td">Name</td>
+        <td class="td">Price</td>
+        <td class="td">Description</td>
+        <td class="td ">Edit</td>
+        <td class="td">Delete</td>
+      </tr>
+      <tr>
+        <td class="td"><img src="img/eye1.jpg" alt="product-image" width="100"></td>
+        <td class="td">ViscoFree Eyelashes</td>
+        <td class="td">N233</td>
+        <td class="td">Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing </td>
+        <td class="td " ><button class="odd editBtn" id="editBtn"><i class="fa fa-edit td-text-green td-largea"></i></button></td>
+        <td class="td"><button class="odd"><i class="fa fa-trash td-text-red td-largea"></i></button></td>
+      </tr>
+      <tr>
+          <td class="td"><img src="img/eye2.jpg" alt="product-image" width="100"></td>
+          <td class="td">Magnetic Lashes</td>
+          <td class="td">N33</td>
+          <td class="td">Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing </td>
+          <td class="td editBtn"><button class="odd editBtn" id="editBtn"><i class="fa fa-edit td-text-green td-largea"></i></button></td>
+          <td class="td"><button class="odd"><i class="fa fa-trash td-text-red td-largea"></i></button></td>
+        </tr>
+        <tr>
+            <td class="td"><img src="img/eye3.jpg" alt="product-image" width="100"></td>
+            <td class="td">CoverLady Lashes</td>
+            <td class="td">N23</td>
+            <td class="td">Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing </td>
+            <td class="td editBtn"><button class="odd editBtn"><i class="fa fa-edit td-text-green td-largea"></i></button></td>
+            <td class="td"><button class="odd"><i class="fa fa-trash td-text-red td-largea"></i></button></td>
+          </tr>
+          <tr>
+              <td class="td"><img src="img/eye4.jpg" alt="product-image" width="100"></td>
+              <td class="td">USB Eyelash Extension Tool</td>
+              <td class="td">N133</td>
+              <td class="td">Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing </td>
+              <td class="td editBtn"><button class="odd editBtn"><i class="fa fa-edit td-text-green td-largea"></i></button></td>
+              <td class="td"><button class="odd"><i class="fa fa-trash td-text-red td-largea"></i></button></td>
+            </tr>
+
+    </table>
+    <div class='pagination-container' align="center">
+				<nav align="center">
+				  <ul class="pagination" align="center">
+            
+            <li data-page="prev" >
+								     <span> < <span class="sr-only">(current)</span></span>
+								    </li>
+				   <!--	Here the JS Function Will Add the Rows -->
+        <li data-page="next" id="prev">
+								       <span> > <span class="sr-only">(current)</span></span>
+								    </li>
+				  </ul>
+				</nav>
+		</div>
+  </div>
+
+  <!-- The Add product Modal -->
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div class="container">  
+          <form id="contact" action="" method="post">
+            <h3>Add New Product</h3>
+            <fieldset>
+              <input placeholder="Product Name" type="text" tabindex="1" required autofocus>
+            </fieldset>
+            <fieldset>
+              <input placeholder="Price" type="text" tabindex="2" required>
+            </fieldset>
+            <fieldset>
+              <textarea id="description" name="description" placeholder="Write a Brief Description of Product" style="height:200px" tabindex="3" required></textarea>
+            </fieldset>
+            <fieldset>
+              <label for="image"><b>Upload Product Image</b></label>
+              <input  type="file" tabindex="4" required>
+            </fieldset>
+           
+            <fieldset>
+              <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+            </fieldset>
+            
+          </form>
+        </div>
+    </div>
+  
+  </div>
+
+  <!-- The Edit product Modal -->
+<div id="myEditModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close" id="clos">&times;</span>
+      <div class="container">  
+          <form id="contact" action="" method="post">
+            <h3>Edit Product</h3>
+            <fieldset>
+              <input placeholder="Product Name" type="text" tabindex="1" required autofocus>
+            </fieldset>
+            <fieldset>
+              <input placeholder="Price" type="text" tabindex="2" required>
+            </fieldset>
+            <fieldset>
+              <textarea id="description" name="description" placeholder="Write a Brief Description of Product" style="height:200px" tabindex="3" required></textarea>
+            </fieldset>
+            <fieldset>
+              <label for="image"><b>Upload Product Image</b></label>
+              <input  type="file" tabindex="4" required>
+            </fieldset>
+           
+            <fieldset>
+              <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+            </fieldset>
+            
+          </form>
+        </div>
+    </div>
+  
+  </div>
+</div>
+</script>
+<!-- EDIT PRODUCT MODAL SCRIPT -->
+<script>
+// Get the modal
+var modale = document.getElementById("myEditModal");
+
+// Get the button that opens the modal
+var btne = document.getElementById("editBtn");
+// var btne = document.getElementsByClassName("editBtn");
+
+// Get the <span> element that closes the modal
+var spane = document.getElementById("clos");
+
+// When the user clicks the button, open the modal 
+btne.onclick = function() {
+  modale.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+spane.onclick = function() {
+  modale.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modale.style.display = "none";
+  }
+}
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="pagination.js"></script>
+<script>
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the catlog page
+var Catlog = document.getElementById("catlog");
+
+// Get the overview page
+var Overview = document.getElementById("overview");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+    overlayBg.style.display = "none";
+  } else {
+    mySidebar.style.display = 'block';
+    overlayBg.style.display = "block";
+  }
+}
+// CATLOG OPENING FUNCTION
+function catlog_open() {
+  w3_close();
+  Overview.style.display = 'none';
+  Catlog.style.display = 'block';
+  // if (Catlog.style.display === 'block') {
+  //   Overview.style.display = 'none';
+    
+  // } else {
+  //   Overview.style.display = 'block';
+  //   Catlog.style.display = "block";
+  // }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+  mySidebar.style.display = "none";
+  overlayBg.style.display = "none";
+}
+</script>
+<!-- ADD PRODUCT MODAL SCRIPT -->
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("addBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
+</body>
+</html>
