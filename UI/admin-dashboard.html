@@ -5,6 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="admin.css">
+<link rel="stylesheet" href="admin2.css">
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
@@ -21,29 +22,17 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Montserrat", sans-serif}
 
 <!-- Sidebar/menu -->
 <nav class="td-sidebar td-collapse td-blackie td-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
-  <!-- <div class="td-container td-row">
-    <div class="td-col s4">
-      <img src="/w3images/avatar2.png" class="td-circle td-margin-right" style="width:46px">
-    </div>
-    <div class="td-col s8 td-bar">
-      <span>Welcome, <strong>Mike</strong></span><br>
-      <a href="#" class="td-bar-item td-button"><i class="fa fa-envelope"></i></a>
-      <a href="#" class="td-bar-item td-button"><i class="fa fa-user"></i></a>
-      <a href="#" class="td-bar-item td-button"><i class="fa fa-cog"></i></a>
-    </div>
-  </div>
-  <hr> -->
   <div class="td-container cont">
     <i class="fa fa-user-circle-o faw"></i>
     <h5>Welcome Admin!</h5>
   </div>
   <div class="td-bar-block">
     <a href="#" class="td-bar-item td-button td-padding-16 td-hide-large td-dark-grey td-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
-    <a href="index.html" class="td-bar-item td-button td-padding td-blue"><i class="fa fa-th-large fa-fw"></i>  Overview</a>
-    <a href="#" class="td-bar-item td-button td-padding"><i class="fa fa-home fa-fw"></i>  Home</a>
+    <a href="admin-dashboard.html" class="td-bar-item td-button td-padding td-blue"><i class="fa fa-th-large fa-fw"></i>  Overview</a>
+    <a href="index.html" class="td-bar-item td-button td-padding"><i class="fa fa-home fa-fw"></i>  Home</a>
     <a href="#" class="td-bar-item td-button td-padding"><i class="fa fa-eye fa-fw"></i>  Views</a>
     <a href="#" class="td-bar-item td-button td-padding"><i class="fa fa-bar-chart fa-fw"></i>  Traffic</a>
-    <a href="#" class="td-bar-item td-button td-padding"><i class="fa fa-shopping-basket fa-fw"></i>  Catlog</a>
+    <a href="#" class="td-bar-item td-button td-padding"  onclick="catlog_open()"><i class="fa fa-shopping-basket fa-fw"></i>  Catlog</a>
     <a href="#" class="td-bar-item td-button td-padding"><i class="fa fa-shopping-cart fa-fw"></i>  Orders</a>
     <a href="#" class="td-bar-item td-button td-padding"><i class="fa fa-users fa-fw"></i>  Clients/Users</a>
     <a href="#" class="td-bar-item td-button td-padding"><i class="fa fa-money  fa-fw"></i>  Revenue</a>
@@ -56,7 +45,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Montserrat", sans-serif}
 <div class="td-overlay td-hide-large td-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
 <!-- !PAGE CONTENT! -->
-<div class="td-main" style="margin-left:300px;margin-top:43px;">
+<div class="td-main" style="margin-left:300px;margin-top:43px;" id="overview">
 
   <!-- Header -->
   <header class="td-container" style="padding-top:22px">
@@ -68,17 +57,17 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Montserrat", sans-serif}
       <div class="td-container td-red td-padding-16">
         <div class="td-left"><i class="fa fa-comment td-xxxlarge"></i></div>
         <div class="td-right">
-          <h3>52</h3>
+          <h3>N52,045.67</h3>
         </div>
         <div class="td-clear"></div>
-        <h4>Messages</h4>
+        <h4>Revenue</h4>
       </div>
     </div>
     <div class="td-quarter">
       <div class="td-container td-blue td-padding-16">
         <div class="td-left"><i class="fa fa-eye td-xxxlarge"></i></div>
         <div class="td-right">
-          <h3>99</h3>
+          <h3>9906</h3>
         </div>
         <div class="td-clear"></div>
         <h4>Views</h4>
@@ -88,17 +77,17 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Montserrat", sans-serif}
       <div class="td-container td-teal td-padding-16">
         <div class="td-left"><i class="fa fa-share-alt td-xxxlarge"></i></div>
         <div class="td-right">
-          <h3>23</h3>
+          <h3>2312</h3>
         </div>
         <div class="td-clear"></div>
-        <h4>Shares</h4>
+        <h4>Orders</h4>
       </div>
     </div>
     <div class="td-quarter">
       <div class="td-container td-orange td-text-white td-padding-16">
         <div class="td-left"><i class="fa fa-users td-xxxlarge"></i></div>
         <div class="td-right">
-          <h3>50</h3>
+          <h3>712</h3>
         </div>
         <div class="td-clear"></div>
         <h4>Users</h4>
@@ -280,9 +269,182 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Montserrat", sans-serif}
   <!-- End page content -->
 </div>
 
+<div id="catlog">
+  <div class="td-container tb">
+      <h5 class="td-center">Product Catlog</h5> 
+      <button class="addp" id="addBtn"><span class="td-right add">Add Product</span>
+      <span class="td-right"><i class="fa fa-plus-circle td-text-blue  fa-2x"></i></span></button>
+      <select class  ="form-control" name="state" id="maxRows">
+          <option value="5000">Show ALL Rows</option>
+          <option value="5">4</option>
+          <option value="10">10</option>
+         </select>
+    <table class="td-table td-striped td-white" id="table-id">
+      <tr>
+        <td class="td">Image</td>
+        <td class="td">Name</td>
+        <td class="td">Price</td>
+        <td class="td">Description</td>
+        <td class="td ">Edit</td>
+        <td class="td">Delete</td>
+      </tr>
+      <tr>
+        <td class="td"><img src="img/eye1.jpg" alt="product-image" width="100"></td>
+        <td class="td">ViscoFree Eyelashes</td>
+        <td class="td">N233</td>
+        <td class="td">Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing </td>
+        <td class="td " ><button class="odd editBtn" id="editBtn"><i class="fa fa-edit td-text-green td-largea"></i></button></td>
+        <td class="td"><button class="odd"><i class="fa fa-trash td-text-red td-largea"></i></button></td>
+      </tr>
+      <tr>
+          <td class="td"><img src="img/eye2.jpg" alt="product-image" width="100"></td>
+          <td class="td">Magnetic Lashes</td>
+          <td class="td">N33</td>
+          <td class="td">Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing </td>
+          <td class="td editBtn"><button class="odd editBtn" id="editBtn"><i class="fa fa-edit td-text-green td-largea"></i></button></td>
+          <td class="td"><button class="odd"><i class="fa fa-trash td-text-red td-largea"></i></button></td>
+        </tr>
+        <tr>
+            <td class="td"><img src="img/eye3.jpg" alt="product-image" width="100"></td>
+            <td class="td">CoverLady Lashes</td>
+            <td class="td">N23</td>
+            <td class="td">Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing </td>
+            <td class="td editBtn"><button class="odd editBtn"><i class="fa fa-edit td-text-green td-largea"></i></button></td>
+            <td class="td"><button class="odd"><i class="fa fa-trash td-text-red td-largea"></i></button></td>
+          </tr>
+          <tr>
+              <td class="td"><img src="img/eye4.jpg" alt="product-image" width="100"></td>
+              <td class="td">USB Eyelash Extension Tool</td>
+              <td class="td">N133</td>
+              <td class="td">Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing </td>
+              <td class="td editBtn"><button class="odd editBtn"><i class="fa fa-edit td-text-green td-largea"></i></button></td>
+              <td class="td"><button class="odd"><i class="fa fa-trash td-text-red td-largea"></i></button></td>
+            </tr>
+
+    </table>
+    <div class='pagination-container' align="center">
+				<nav align="center">
+				  <ul class="pagination" align="center">
+            
+            <li data-page="prev" >
+								     <span> < <span class="sr-only">(current)</span></span>
+								    </li>
+				   <!--	Here the JS Function Will Add the Rows -->
+        <li data-page="next" id="prev">
+								       <span> > <span class="sr-only">(current)</span></span>
+								    </li>
+				  </ul>
+				</nav>
+		</div>
+  </div>
+
+  <!-- The Add product Modal -->
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div class="container">  
+          <form id="contact" action="" method="post">
+            <h3>Add New Product</h3>
+            <fieldset>
+              <input placeholder="Product Name" type="text" tabindex="1" required autofocus>
+            </fieldset>
+            <fieldset>
+              <input placeholder="Price" type="text" tabindex="2" required>
+            </fieldset>
+            <fieldset>
+              <textarea id="description" name="description" placeholder="Write a Brief Description of Product" style="height:200px" tabindex="3" required></textarea>
+            </fieldset>
+            <fieldset>
+              <label for="image"><b>Upload Product Image</b></label>
+              <input  type="file" tabindex="4" required>
+            </fieldset>
+           
+            <fieldset>
+              <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+            </fieldset>
+            
+          </form>
+        </div>
+    </div>
+  
+  </div>
+
+  <!-- The Edit product Modal -->
+<div id="myEditModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close" id="clos">&times;</span>
+      <div class="container">  
+          <form id="contact" action="" method="post">
+            <h3>Edit Product</h3>
+            <fieldset>
+              <input placeholder="Product Name" type="text" tabindex="1" required autofocus>
+            </fieldset>
+            <fieldset>
+              <input placeholder="Price" type="text" tabindex="2" required>
+            </fieldset>
+            <fieldset>
+              <textarea id="description" name="description" placeholder="Write a Brief Description of Product" style="height:200px" tabindex="3" required></textarea>
+            </fieldset>
+            <fieldset>
+              <label for="image"><b>Upload Product Image</b></label>
+              <input  type="file" tabindex="4" required>
+            </fieldset>
+           
+            <fieldset>
+              <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+            </fieldset>
+            
+          </form>
+        </div>
+    </div>
+  
+  </div>
+</div>
+</script>
+<!-- EDIT PRODUCT MODAL SCRIPT -->
+<script>
+// Get the modal
+var modale = document.getElementById("myEditModal");
+
+// Get the button that opens the modal
+var btne = document.getElementById("editBtn");
+// var btne = document.getElementsByClassName("editBtn");
+
+// Get the <span> element that closes the modal
+var spane = document.getElementById("clos");
+
+// When the user clicks the button, open the modal 
+btne.onclick = function() {
+  modale.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+spane.onclick = function() {
+  modale.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modale.style.display = "none";
+  }
+}
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="pagination.js"></script>
 <script>
 // Get the Sidebar
 var mySidebar = document.getElementById("mySidebar");
+
+// Get the catlog page
+var Catlog = document.getElementById("catlog");
+
+// Get the overview page
+var Overview = document.getElementById("overview");
 
 // Get the DIV with overlay effect
 var overlayBg = document.getElementById("myOverlay");
@@ -297,11 +459,52 @@ function w3_open() {
     overlayBg.style.display = "block";
   }
 }
+// CATLOG OPENING FUNCTION
+function catlog_open() {
+  w3_close();
+  Overview.style.display = 'none';
+  Catlog.style.display = 'block';
+  // if (Catlog.style.display === 'block') {
+  //   Overview.style.display = 'none';
+    
+  // } else {
+  //   Overview.style.display = 'block';
+  //   Catlog.style.display = "block";
+  // }
+}
 
 // Close the sidebar with the close button
 function w3_close() {
   mySidebar.style.display = "none";
   overlayBg.style.display = "none";
+}
+</script>
+<!-- ADD PRODUCT MODAL SCRIPT -->
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("addBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
 }
 </script>
 
