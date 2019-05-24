@@ -13,18 +13,20 @@
     <!-- Main Login Body -->
     <div class='login'>
       <h2>Sign in</h2>
-      <input name='username' placeholder='Username/Email' type='text'/>
+      <input name='username' placeholder='Username/Email' type='text' id="email"/>
       <input id='pw' name='password' placeholder='Password' type='password'/>
       <div class='remember'>
         <input checked='' id='remember' name='remember' type='checkbox'/>
         <label for='remember'></label>Remember me
       </div>
-      <input type='submit' value='Sign in'/>
+      <input type='submit' value='Sign in' id="submita" />
       <a class='forgot' href='reset.html'>Forgot your password?</a>
     </div>
     <footer>
         <img src="img/makeup.svg" height="50" alt="copy right image" />
         <p class="copy-right"> MakeUp @2019. All right Reserved </p>
     </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="login.js"></script>
   </body>
 </html>
