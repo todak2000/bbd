@@ -1,32 +1,35 @@
 $('document').ready(function(){
+    document.getElementById("submita").onclick = function validate() {
+            var un = document.getElementById("email").value;
+            var pw = document.getElementById("pwd").value;
+            var valid = false;
+            var fn = "";
 
-let emaila = document.getElementById("email").value;
-let pass = document.getElementById("pwd").value;
+            var unArray = ["daniel@daniel.com", "zubby@zubby.com", "matt@matt.com", "koby@koby.com"];
+            var pwArray = ["daniel", "zubby", "matt", "koby"];
+            var fnArray = ["Daniel Walters", "Zubby Goss", "Matt Cain", "Koby Dempsey"];
 
-const users = [
-    { email: "daniel@daniel.com", password: "daniel"},
-    { email: "matt@matt.com", password: "matt"},
-    { email: "zubby@zubby.com", password: "zubby"}
-];
+            for (var i=0; i <unArray.length; i++) {
+                if ((un == unArray[i]) && (pw == pwArray[i])) {
+                    valid = true;
+                    fn = fnArray[i];
+                    break;
+                }
+            }
 
-document.getElementById("submita").onclick = function Search(){
-    
-
-    users.forEach(function(loginDetails){
-        if (loginDetails.email === emaila) {
-            console.log("yes");
-            alert("Welcome " + loginDetails.password);
-            location.replace("index.html");
-         
-         } 
-        else {
-            console.log('No result found');
-            alert("Your shopping details were not found. Please Signup!")
-            //location.replace("signup.html")
-    
-        }
-    });
-  
-}
+            if (valid) {
+                //alert ("Login was successful");
+                console.log("yes");
+                alert("Welcome " + fn);
+                location.replace("index.html");
+                // document.getElementById("mandatory1").value = un;
+            }
+            else {
+                alert("Invalid Username and/or Password! Please try again!")
+                document.getElementById("pwd").value = "";
+                document.getElementById("email").value = "";
+                document.getElementById("email").focus();
+            }
+    }
 
 });
